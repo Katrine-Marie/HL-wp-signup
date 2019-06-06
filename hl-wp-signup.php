@@ -11,3 +11,7 @@
 */
 
 namespace nebula\heyloyalty;
+
+if(!defined('ABSPATH')){
+	exit('Go away!');
+}
