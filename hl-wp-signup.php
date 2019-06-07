@@ -15,3 +15,5 @@ namespace nebula\heyloyalty;
 if(!defined('ABSPATH')){
 	exit('Go away!');
 }
+
+define('nebula_heyloyalty_DIR', plugin_dir_path(__FILE__));
