@@ -17,3 +17,29 @@ if(!defined('ABSPATH')){
 }
 
 define('nebula_heyloyalty_DIR', plugin_dir_path(__FILE__));
+$setup = new Initialization();
+
+
+
+
+
+
+
+
+// Init class
+class Initialization{
+    public function __construct(){
+        register_activation_hook( __FILE__, array($this, 'plugin_activated' ));
+        register_deactivation_hook( __FILE__, array($this, 'plugin_deactivated' ));
+        register_uninstall_hook( __FILE__, array($this, 'plugin_uninstall' ) );
+    }
+    public static function plugin_activated(){
+			set_transient('_nebula_heyloyalty_welcome',true,30);
+    }
+    public function plugin_deactivated(){
+         // This will run when the plugin is deactivated, use to delete the database
+    }
+    public function plugin_uninstall() {
+
+    }
+}
