@@ -19,7 +19,30 @@ class admin_control {
 	}
 
 	public function render_admin(){
-	
+		?>
+			<div class="wrap">
+				<h1>
+					HL WP Signup Admin
+				</h1>
+				<p>
+					Once you have filled out the textares below with the embed code you get from the Heyloyalty control panel, you can either tick the checkbox, which automatically adds the form to all posts/pages, or you can copy and paste the shortcode written below, in order for the form to show up wherever you want in the content.
+				</p>
+				<form method="post" enctype="multipart/form-data" action="<?php echo esc_html(admin_url('admin-post.php')); ?>">
+					<label name="HL-aut-embed" for="HL-aut-embed">Automatically insert on all posts:</label>
+					<input type="checkbox" name="HL-aut-embed" value="Yes" <?php if(get_option('hl-wp-aut') == 'Yes'){echo 'checked';} ?>><br><br>
+					<label name="HL-wp_embed-value" for="HL-wp_embed-value">Insert your embed code here:</label>
+					<textarea style="min-height:150px;display:block;width:100%;resize:none;" name="HL-wp_embed-value" type="text"><?php echo stripslashes(get_option('hl-wp-embed')); ?></textarea>
+					<input type="hidden" name="action" value="hl-wp_settings">
+					<?php
+						wp_nonce_field('HL-settings-save', 'HL-custom-message');
+						submit_button();
+					?>
+				</form>
+				<p>
+					Use the shortcode <code>[heyloyalty_wp_signup]</code> to insert the above form into a post or page of your choice.
+				</p>
+			</div>
+		<?php
 	}
 
 	function ValidatePage(){
