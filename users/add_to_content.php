@@ -14,7 +14,8 @@ class heyloyaltyAutomaticAddition {
 	{
 		$formContent = stripslashes(get_option('hl-wp-embed'));
 
-		return $formContent;
+		$content .= '<br>' . $formContent;
+		return $content;
 	}
 
 }
