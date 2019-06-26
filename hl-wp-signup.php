@@ -24,7 +24,9 @@ $setup = new Initialization();
 
 
 
-
+// Welcome screen
+include_once nebula_heyloyalty_DIR . 'admin/admin_welcome.php';
+$welcome_page = new admin_welcome();
 
 // Init class
 class Initialization{
