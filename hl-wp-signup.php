@@ -19,7 +19,9 @@ if(!defined('ABSPATH')){
 define('nebula_heyloyalty_DIR', plugin_dir_path(__FILE__));
 $setup = new Initialization();
 
-
+// Init admin page control
+include_once nebula_heyloyalty_DIR . 'admin/admin_control.php';
+$admin_page = new admin_control();
 
 
 
