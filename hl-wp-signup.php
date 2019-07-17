@@ -26,6 +26,8 @@ $admin_page = new admin_control();
 // Init shortcode class
 include_once nebula_heyloyalty_DIR . 'admin/shortcode_class.php';
 
+// TODO: Init 'aut. add to posts' class
+
 
 // Welcome screen
 include_once nebula_heyloyalty_DIR . 'admin/admin_welcome.php';
