@@ -26,7 +26,6 @@ $admin_page = new admin_control();
 // Init shortcode class
 include_once nebula_heyloyalty_DIR . 'admin/shortcode_class.php';
 
-// TODO: Init 'aut. add to posts' class
 // Init 'aut. add to posts' class
 if(get_option('hl-wp-aut') == 'Yes'){
 	include_once nebula_heyloyalty_DIR . 'users/add_to_content.php';
