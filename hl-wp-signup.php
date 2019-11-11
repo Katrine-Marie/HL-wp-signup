@@ -3,7 +3,7 @@
 * Plugin Name: Heyloyalty WP signup
 * Plugin URI: https://github.com/Katrine-Marie/HL-wp-signup
 * Description: Easily embed a Heyloyalty signup form into your posts/pages
-* Version: 1.0.0
+* Version: 2.0.0
 * Author: Katrine-Marie Burmeister
 * Author URI: https://fjordstudio.dk
 * License:     GNU General Public License v3.0
@@ -26,6 +26,11 @@ $admin_page = new admin_control();
 // Init shortcode class
 include_once nebula_heyloyalty_DIR . 'admin/shortcode_class.php';
 
+//Init custom form creation
+// if(get_option('hl-wp-api-key') != '' && get_option('hl-wp-secret-key') != ''){
+// 	include_once nebula_heyloyalty_DIR . 'users/custom_form.php';
+// }
+
 // Init 'aut. add to posts' class
 if(get_option('hl-wp-aut') == 'Yes'){
 	include_once nebula_heyloyalty_DIR . 'users/add_to_content.php';
@@ -40,15 +45,12 @@ class Initialization{
     public function __construct(){
         register_activation_hook( __FILE__, array($this, 'plugin_activated' ));
         register_deactivation_hook( __FILE__, array($this, 'plugin_deactivated' ));
-        register_uninstall_hook( __FILE__, array($this, 'plugin_uninstall' ) );
+        //register_uninstall_hook( __FILE__, array($this, 'plugin_uninstall' ) );
     }
     public static function plugin_activated(){
 			set_transient('_nebula_heyloyalty_welcome',true,30);
     }
     public function plugin_deactivated(){
          // This will run when the plugin is deactivated, use to delete the database
-    }
-    public function plugin_uninstall() {
-
     }
 }
