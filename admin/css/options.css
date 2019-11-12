@@ -1,0 +1,12 @@
+/*===== GENERAL FORM STYLING =====*/
+label, input {
+  display:block;
+}
+input[type="text"]{
+  min-width:300px;
+}
+
+label[for="HL-aut-embed"]{
+  display:inline;
+  padding-right:4px;
+}
