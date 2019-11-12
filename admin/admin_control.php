@@ -9,9 +9,16 @@ class admin_control {
 	public $hl_wp_aut;
 
 	public function __construct(){
+		global $pagenow;
+
 		add_action('admin_notices', array($this, 'empty_field_notice'));
 		add_action('admin_menu', array($this, 'add_options_page'));
 		add_action('admin_post_hl-wp_settings', array($this, 'ValidatePage'));
+
+		if (($pagenow == 'options-general.php' ) || ( $_GET["page"] == 'hl-wp_admin-page')) {
+				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+				//add_action( 'admin_enqueue_scripts', array($this,'enqueue_scripts') );
+		}
 	}
 
 	public function add_options_page(){
@@ -82,6 +89,14 @@ class admin_control {
 
 		wp_safe_redirect(urldecode($url));
 		exit;
+	}
+
+	public function enqueue_styles() {
+		wp_enqueue_style(
+			'hl-wp-styles',
+			plugins_url('css/options.css', __FILE__),
+			array()
+		);
 	}
 
 }
