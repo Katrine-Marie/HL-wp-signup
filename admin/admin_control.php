@@ -8,6 +8,15 @@ class admin_control {
 	public $hl_embed_code;
 	public $hl_wp_aut;
 
+	public $hl_wp_api_key;
+	public $hl_wp_secret_key;
+	public $hl_wp_list_id;
+	public $hl_wp_form_heading;
+
+	public $hl_wp_field_firstname;
+	public $hl_wp_field_lastname;
+	public $hl_wp_field_mobile;
+
 	public function __construct(){
 		global $pagenow;
 
