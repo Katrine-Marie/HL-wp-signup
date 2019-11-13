@@ -10,3 +10,49 @@ label[for="HL-aut-embed"]{
   display:inline;
   padding-right:4px;
 }
+
+/*===== CSS TABSET =====*/
+.tabset {
+   position: relative;
+   height: 520px;
+   border:10px solid #aaa;
+   border-radius:8px;
+   background:#aaa;
+   width: 800px;
+   max-width: 100%;
+}
+.tabset .tab-label {
+   display: inline-block;
+   padding: 10px 20px;
+   background:#ccc;
+   border-radius:8px 8px 0 0;
+}
+.tabset .tab-label:hover {
+   cursor: pointer;
+}
+.tab-content {
+   background:#f1f1f1;
+   border-radius:0 8px 8px 8px;
+   position: absolute;
+   top: 35px;
+   bottom:4px;
+   width: 100%;
+   overflow: auto;
+   padding: 20px;
+   box-sizing: border-box;
+}
+.tab-content h2 {
+  margin-top:0;
+}
+
+.tab-content,
+.tabset input[type="radio"] {
+   display: none;
+}
+.tabset input[type="radio"]:checked + * + .tab-content {
+   display: block;
+}
+
+.tabset input[type="radio"]:checked + label {
+  background:#f1f1f1;
+}
