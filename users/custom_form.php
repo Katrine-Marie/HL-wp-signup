@@ -1,16 +1,11 @@
 <?php
 
-// ini_set('display_errors', 1);
-// error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', 1);
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 
-require_once('../../../../wp-config.php');
+$dataOpts = $_GET['dataOpts'];
 
-require '../HL-phpclient/src/HL-phpclient/HLCurlHandler.php';
-require '../HL-phpclient/src/HL-phpclient/HLBase.php';
-require '../HL-phpclient/src/HL-phpclient/HLClient.php';
-require '../HL-phpclient/src/HL-phpclient/HLMembers.php';
-require '../HL-phpclient/src/HL-phpclient/HLLists.php';
+$dataArray = explode(",",$dataOpts);
 
-use Phpclient\HLClient;
-use Phpclient\HLMembers;
-use Phpclient\HLLists;
+
+?>
