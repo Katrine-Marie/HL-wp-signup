@@ -26,19 +26,16 @@ $admin_page = new admin_control();
 // Init shortcode class
 include_once nebula_heyloyalty_DIR . 'admin/shortcode_class.php';
 
-//Init custom form creation
-// if(get_option('hl-wp-api-key') != '' && get_option('hl-wp-secret-key') != ''){
-// 	include_once nebula_heyloyalty_DIR . 'users/custom_form.php';
-// }
-
 // Init 'aut. add to posts' class
 if(get_option('hl-wp-aut') == 'Yes'){
 	include_once nebula_heyloyalty_DIR . 'users/add_to_content.php';
 }
 
+
 // Welcome screen
 include_once nebula_heyloyalty_DIR . 'admin/admin_welcome.php';
 $welcome_page = new admin_welcome();
+
 
 // Init class
 class Initialization{
