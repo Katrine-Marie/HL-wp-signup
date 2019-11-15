@@ -90,6 +90,12 @@ class admin_control {
 
 							<br>
 
+							<h3>Form fields to include:</h3>
+							Email <input type="checkbox" name="hl-wp-field-email" checked disabled><br>
+							Name <input type="checkbox" name="hl-wp-field-firstname" value="Yes" <?php if(get_option('hl-wp-field-firstname') == 'Yes'){echo 'checked';} ?>><br>
+							<!-- Last Name <input type="checkbox" name="hl-wp-field-lastname" value="Yes" <?php // if(get_option('hl-wp-field-lastname') == 'Yes'){echo 'checked';} ?>><br> -->
+							Mobile <input type="checkbox" name="hl-wp-field-mobile" value="Yes" <?php if(get_option('hl-wp-field-mobile') == 'Yes'){echo 'checked';} ?>>
+
 					</div>
 				</div>
 					<input type="hidden" name="action" value="hl-wp_settings">
