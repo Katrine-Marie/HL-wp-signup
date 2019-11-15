@@ -54,12 +54,33 @@ class admin_control {
 				</ul>
 
 				<br>
-				
+
 				<form method="post" enctype="multipart/form-data" action="<?php echo esc_html(admin_url('admin-post.php')); ?>">
 					<label name="HL-aut-embed" for="HL-aut-embed">Automatically insert on all posts:</label>
-					<input type="checkbox" name="HL-aut-embed" value="Yes" <?php if(get_option('hl-wp-aut') == 'Yes'){echo 'checked';} ?>><br><br>
+					<input type="checkbox" name="HL-aut-embed" value="Yes" <?php if(get_option('hl-wp-aut') == 'Yes'){echo 'checked';} ?>>
+
+					<br><br>
+
+					<div class="block tabset">
+
+						<input type="radio" name="tabs" id="tab1" checked />
+  					<label for="tab1" class="tab-label">Simple</label>
+  					<div class="tab-content">
+
+						<h2>Simple Usage:</h2>
+
 					<label name="HL-wp_embed-value" for="HL-wp_embed-value">Insert your embed code here:</label>
 					<textarea style="min-height:150px;display:block;width:100%;resize:none;" name="HL-wp_embed-value" type="text"><?php echo stripslashes(get_option('hl-wp-embed')); ?></textarea>
+
+				</div>
+					<input type="radio" name="tabs" id="tab2"/>
+					<label for="tab2" class="tab-label">Advanced</label>
+					<div class="tab-content">
+
+						<h2>Advanced Usage:</h2>
+
+					</div>
+				</div>
 					<input type="hidden" name="action" value="hl-wp_settings">
 					<?php
 						wp_nonce_field('HL-settings-save', 'HL-custom-message');
