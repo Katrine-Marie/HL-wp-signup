@@ -69,15 +69,26 @@ class admin_control {
 
 						<h2>Simple Usage:</h2>
 
-					<label name="HL-wp_embed-value" for="HL-wp_embed-value">Insert your embed code here:</label>
-					<textarea style="min-height:150px;display:block;width:100%;resize:none;" name="HL-wp_embed-value" type="text"><?php echo stripslashes(get_option('hl-wp-embed')); ?></textarea>
+							<label name="HL-wp_embed-value" for="HL-wp_embed-value">Insert your automatically generated Heyloyalty embed code here:<br><small>NOTE: This can be overridden by the advanced settings</small></label>
+							<textarea style="min-height:150px;display:block;width:100%;resize:none;" name="HL-wp_embed-value" type="text"><?php echo stripslashes(get_option('hl-wp-embed')); ?></textarea>
 
-				</div>
-					<input type="radio" name="tabs" id="tab2"/>
-					<label for="tab2" class="tab-label">Advanced</label>
-					<div class="tab-content">
+						</div>
+						<input type="radio" name="tabs" id="tab2"/>
+						<label for="tab2" class="tab-label">Advanced</label>
+						<div class="tab-content">
 
-						<h2>Advanced Usage:</h2>
+							<h2>Advanced Usage:</h2>
+
+							<label name="hl-wp-form-heading" for="hl-wp-form-heading">Form Heading:</label>
+							<input type="text" name="hl-wp-form-heading" value="<?php echo get_option('hl-wp-form-heading'); ?>"><br>
+							<label name="HL-api-key" for="HL-api-key">Your API Key:</label>
+							<input type="text" name="HL-api-key" value="<?php echo get_option('hl-wp-api-key'); ?>"><br>
+							<label name="HL-secret-key" for="HL-secret-key">Your Secret Key:</label>
+							<input type="text" name="HL-secret-key" value="<?php echo get_option('hl-wp-secret-key'); ?>"><br>
+							<label name="hl-wp-list-id" for="hl-wp-list-id">List ID:</label>
+							<input type="text" name="hl-wp-list-id" value="<?php echo get_option('hl-wp-list-id'); ?>"><br>
+
+							<br>
 
 					</div>
 				</div>
