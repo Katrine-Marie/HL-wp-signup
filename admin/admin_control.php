@@ -41,8 +41,20 @@ class admin_control {
 					HL WP Signup Admin
 				</h1>
 				<p>
-					Once you have filled out the textares below with the embed code you get from the Heyloyalty control panel, you can either tick the checkbox, which automatically adds the form to all posts/pages, or you can copy and paste the shortcode written below, in order for the form to show up wherever you want in the content.
+					You can insert Heyloyalty forms in two different ways.<br>
+					The easy way is to copy/paste an embed code after creating a form in the Heyloyalty dashboard, and inserting it below.<br>
+					The advanced way is to insert your Heyloyalty API key and secret key, and pick out which form fields to work with. This creates a custom form.
 				</p>
+				<p>
+					Once you've set up the form, you can add it to your content in the following ways:
+				</p>
+				<ul style="list-style-type:disc;padding-left:24px;">
+					<li>Tick the checkbox below, automatically adding the form to all posts and pages.</li>
+					<li>Copy the shortcode written below the form, and paste it into either a content field or a widget wherever you want a form to appear.</li>
+				</ul>
+
+				<br>
+				
 				<form method="post" enctype="multipart/form-data" action="<?php echo esc_html(admin_url('admin-post.php')); ?>">
 					<label name="HL-aut-embed" for="HL-aut-embed">Automatically insert on all posts:</label>
 					<input type="checkbox" name="HL-aut-embed" value="Yes" <?php if(get_option('hl-wp-aut') == 'Yes'){echo 'checked';} ?>><br><br>
