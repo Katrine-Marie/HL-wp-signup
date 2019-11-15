@@ -88,7 +88,7 @@ class admin_control {
 					?>
 				</form>
 				<p>
-					Use the shortcode <code>[heyloyalty_wp_signup]</code> to insert the above form into a post or page of your choice.
+					Copy/paste the shortcode <code>[heyloyalty_wp_signup]</code> to insert the form into a post, page or widget of your choice.
 				</p>
 			</div>
 		<?php
