@@ -97,6 +97,16 @@ class admin_control {
 	function ValidatePage(){
 		$this->hl_wp_aut = $_POST['HL-aut-embed'];
 		$this->hl_embed_code = $_POST['HL-wp_embed-value'];
+
+		$this->hl_wp_api_key = $_POST['HL-api-key'];
+		$this->hl_wp_secret_key = $_POST['HL-secret-key'];
+		$this->hl_wp_list_id = $_POST['hl-wp-list-id'];
+		$this->hl_wp_form_heading = $_POST['hl-wp-form-heading'];
+
+		$this->hl_wp_field_firstname = $_POST['hl-wp-field-firstname'];
+		$this->hl_wp_field_lastname = $_POST['hl-wp-field-lastname'];
+		$this->hl_wp_field_mobile = $_POST['hl-wp-field-mobile'];
+
 		$this->SavePage();
 	}
 
@@ -108,6 +118,14 @@ class admin_control {
 
 		update_option('hl-wp-aut', $this->hl_wp_aut);
 		update_option('hl-wp-embed', $this->hl_embed_code);
+		update_option('hl-wp-api-key', $this->hl_wp_api_key);
+		update_option('hl-wp-secret-key', $this->hl_wp_secret_key);
+		update_option('hl-wp-list-id', $this->hl_wp_list_id);
+		update_option('hl-wp-form-heading', $this->hl_wp_form_heading);
+
+		update_option('hl-wp-field-firstname', $this->hl_wp_field_firstname);
+		update_option('hl-wp-field-lastname', $this->hl_wp_field_lastname);
+		update_option('hl-wp-field-mobile', $this->hl_wp_field_mobile);
 		$this->redirect();
 	}
 
