@@ -19,12 +19,16 @@ if(!defined('ABSPATH')){
 define('nebula_heyloyalty_DIR', plugin_dir_path(__FILE__));
 $setup = new Initialization();
 
+
 // Init admin page control
 include_once nebula_heyloyalty_DIR . 'admin/admin_control.php';
 $admin_page = new admin_control();
 
 // Init shortcode class
 include_once nebula_heyloyalty_DIR . 'admin/shortcode_class.php';
+
+// Init widget class
+include_once nebula_heyloyalty_DIR . 'admin/widget_class.php';
 
 // Init 'aut. add to posts' class
 if(get_option('hl-wp-aut') == 'Yes'){
@@ -50,4 +54,5 @@ class Initialization{
     public function plugin_deactivated(){
          // This will run when the plugin is deactivated, use to delete the database
     }
+
 }
