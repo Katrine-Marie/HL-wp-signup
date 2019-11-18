@@ -1,8 +1,19 @@
 # HL-wp-signup
-A simple Wordpress plugin that allows you to add a Heyloyalty signup form to posts/pages.
+A Wordpress plugin that lets you to add a Heyloyalty signup form to posts/pages.
 
 ## How It Works
-Once you have created a form in your Heyloyalty dashboard, you can copy/paste the iframe - and insert it into the relevant form field on the admin page. You can then choose to either display the form as an addition to the content on every post/page, or you can use a shortcode to insert it wherever you want in the content.
+
+### Setting Up the Form
+You can either copy/paste the code for a form you've created in the Heyloyalty dashboard - or you can use your API key and secret key along with a list ID, to set up a custom form.
+
+Both these options are available at the admin options page.
+
+### Adding the Form To Your Website
+You have three options for including the form on your website.
+
+* Display the form as an addition to the content on every post/page by ticking the appropriate checkbox in the admin dashboard.
+* Use a shortcode to insert it wherever you want in the content or in a text widget.
+* Use the included HL WP Widget.
 
 ## Planned functionality
 * Using the API credentials to set up a custom form, entering the API key and secret key on the options page
