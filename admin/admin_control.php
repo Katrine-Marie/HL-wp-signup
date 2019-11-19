@@ -41,7 +41,7 @@ class admin_control {
 					HL WP Signup Admin
 				</h1>
 				<p>
-					You can insert Heyloyalty forms in two different ways.<br>
+					You can create Heyloyalty forms in two different ways.<br>
 					The easy way is to copy/paste an embed code after creating a form in the Heyloyalty dashboard, and inserting it below.<br>
 					The advanced way is to insert your Heyloyalty API key and secret key, and pick out which form fields to work with. This creates a custom form.
 				</p>
@@ -50,6 +50,7 @@ class admin_control {
 				</p>
 				<ul style="list-style-type:disc;padding-left:24px;">
 					<li>Tick the checkbox below, automatically adding the form to all posts and pages.</li>
+					<li>Go to <code>Appearances > Widgets</code> and use the HL WP Widget.</li>
 					<li>Copy the shortcode written below the form, and paste it into either a content field or a widget wherever you want a form to appear.</li>
 				</ul>
 
@@ -106,7 +107,7 @@ class admin_control {
 					?>
 				</form>
 				<p>
-					Copy/paste the shortcode <code>[heyloyalty_wp_signup]</code> to insert the form into a post, page or widget of your choice.
+					Copy/paste the shortcode <code>[heyloyalty_wp_signup]</code> to insert the form into a post, page or text widget of your choice.
 				</p>
 			</div>
 		<?php
