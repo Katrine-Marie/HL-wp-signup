@@ -57,13 +57,42 @@ $dataArray = explode(",",$dataOpts);
       if($_GET['formDesc']){
         echo '<p>' . $_GET['formDesc'] . '</p>';
       }
-     ?>
-  <form action="../admin/heyloyalty/heyloyaltyFunctions.php?access1=<?php echo $_GET['access1']; ?>&access2=<?php echo $_GET['access2'] ?>&list=<?php echo $_GET['list']; ?>" method="post">
+    ?>
+    <form action="../admin/heyloyalty/heyloyaltyFunctions.php?access1=<?php echo $_GET['access1']; ?>&access2=<?php echo $_GET['access2'] ?>&list=<?php echo $_GET['list']; ?>" method="post">
 
+      <div>
+        <label for="hl-email">Email</label>
+        <input type="email" name="hl-email" id="hl-email">
+      </div>
 
+      <?php
+        if(in_array('name', $dataArray)){
+      ?>
+      <div>
+        <label for="hl-firstname">First Name</label>
+        <input type="text" name="hl-firstname" id="hl-firstname">
+      </div>
+      <div>
+        <label for="hl-lastname">Last Name</label>
+        <input type="text" name="hl-lastname" id="hl-lastname">
+      </div>
+      <?php
+        }
+        if(in_array('mobile', $dataArray)){
+       ?>
+      <div>
+        <label for="hl-mobile">Mobile</label>
+        <input type="number" name="hl-mobile" id="hl-mobile">
+      </div>
+      <?php
+        }
+      ?>
+      <div>
+        <input type="submit" name="hl-wp-submit" value="Sign Up">
+      </div>
 
-    </form>
-  </div>
+      </form>
+    </div>
 
 </body>
 </html>
