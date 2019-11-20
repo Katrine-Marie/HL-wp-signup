@@ -24,7 +24,10 @@ $dataArray = explode(",",$dataOpts);
       margin-top:6px;
     }
 
-    input {padding:4px;}
+    input {
+      padding:4px;
+      background:#fff;
+    }
 
     input[type="submit"]{
       cursor:pointer;
@@ -45,7 +48,22 @@ $dataArray = explode(",",$dataOpts);
 </head>
 <body>
 
+  <div class="hl-wp-form" style="font-family:sans-serif;">
+    <?php
+      if($_GET['formHeading']){
+        echo '<h2>' . $_GET['formHeading'] . '</h2>';
+      }
 
+      if($_GET['formDesc']){
+        echo '<p>' . $_GET['formDesc'] . '</p>';
+      }
+     ?>
+  <form action="../admin/heyloyalty/heyloyaltyFunctions.php?access1=<?php echo $_GET['access1']; ?>&access2=<?php echo $_GET['access2'] ?>&list=<?php echo $_GET['list']; ?>" method="post">
+
+
+
+    </form>
+  </div>
 
 </body>
 </html>
