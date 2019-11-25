@@ -12,3 +12,7 @@ require 'HL-phpclient/src/HL-phpclient/HLLists.php';
 use Phpclient\HLClient;
 use Phpclient\HLMembers;
 use Phpclient\HLLists;
+
+$apiKey = base64_decode(urldecode($_GET['access1']));
+$apiSecret = base64_decode(urldecode($_GET['access2']));
+$listId = base64_decode(urldecode($_GET['list']));
