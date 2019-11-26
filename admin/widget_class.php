@@ -12,6 +12,18 @@ class HL_WP__Widget extends WP_Widget {
     );
 	}
 
+	// The widget form
+	public function form( $instance ) {
+    // Set widget defaults
+  	$defaults = array(
+  		'title'    => 'Sign up for our newsletter',
+  		'text'     => ''
+  	);
+
+
+		
+	}
+
 }
 
 // Register the widget
