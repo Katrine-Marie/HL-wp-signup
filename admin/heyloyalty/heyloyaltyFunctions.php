@@ -17,7 +17,23 @@ $apiKey = base64_decode(urldecode($_GET['access1']));
 $apiSecret = base64_decode(urldecode($_GET['access2']));
 $listId = base64_decode(urldecode($_GET['list']));
 
+function createHeyloyaltySignup($email, $firstname = null, $lastname = null, $mobile = null){
 
+    $fields = [
+      'email' => $email,
+  		'firstname' => $firstname,
+  		'lastname' => $lastname,
+      'mobile' => $mobile
+  	];
+
+  $client = new HLClient($apiKey,$apiSecret);
+  $listsService = new HLLists($client);
+
+	$client = new HLClient($apiKey,$apiSecret);
+	$memberService = new HLMembers($client);
+	$result = $memberService->create($listId,$fields);
+
+}
 
 
 
