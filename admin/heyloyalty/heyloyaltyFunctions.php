@@ -19,12 +19,29 @@ $listId = base64_decode(urldecode($_GET['list']));
 
 function createHeyloyaltySignup($email, $firstname = null, $lastname = null, $mobile = null){
 
+  if($firstname || $lastname && $mobile){
     $fields = [
       'email' => $email,
   		'firstname' => $firstname,
   		'lastname' => $lastname,
       'mobile' => $mobile
   	];
+  }elseif($firstname || $lastname){
+    $fields = [
+      'email' => $email,
+  		'firstname' => $firstname,
+  		'lastname' => $lastname
+  	];
+  }elseif($mobile){
+    $fields = [
+      'email' => $email,
+      'mobile' => $mobile
+  	];
+  }else {
+    $fields = [
+      'email' => $email
+  	];
+  }
 
   $client = new HLClient($apiKey,$apiSecret);
   $listsService = new HLLists($client);
