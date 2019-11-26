@@ -52,11 +52,14 @@ function createHeyloyaltySignup($email, $firstname = null, $lastname = null, $mo
 
 }
 
+if(isset($_POST['hl-wp-submit'])){
+  $email = htmlspecialchars($_POST['hl-email'], ENT_QUOTES);
+  $firstname = htmlspecialchars($_POST['hl-firstname'], ENT_QUOTES);
+  $lastname = htmlspecialchars($_POST['hl-lastname'], ENT_QUOTES);
+  $mobile = htmlspecialchars($_POST['hl-mobile'], ENT_QUOTES);
 
-
-
-
-
+  createHeyloyaltySignup($email, $firstname, $lastname, $mobile);
+}
 
 echo '<div style="font-family:sans-serif;">';
 echo '<h2>Thanks for signing up</h2>';
