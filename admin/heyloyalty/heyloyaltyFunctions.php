@@ -16,3 +16,16 @@ use Phpclient\HLLists;
 $apiKey = base64_decode(urldecode($_GET['access1']));
 $apiSecret = base64_decode(urldecode($_GET['access2']));
 $listId = base64_decode(urldecode($_GET['list']));
+
+
+
+
+
+
+
+
+
+echo '<div style="font-family:sans-serif;">';
+echo '<h2>Thanks for signing up</h2>';
+echo '<p>We look forward to sending you our next newsletter.</p>';
+echo '</div>';
