@@ -20,8 +20,11 @@ class HL_WP__Widget extends WP_Widget {
   		'text'     => ''
   	);
 
+		// Parse current settings with defaults
+  	extract( wp_parse_args( ( array ) $instance, $defaults ) ); ?>
 
-		
+
+
 	}
 
 }
