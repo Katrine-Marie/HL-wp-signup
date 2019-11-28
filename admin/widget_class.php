@@ -35,7 +35,15 @@ class HL_WP__Widget extends WP_Widget {
   		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" value="<?php echo esc_attr( $text ); ?>" />
   	</p>
 
-  <?php 
+  <?php
+	}
+
+	// Update widget settings
+	public function update( $new_instance, $old_instance ) {
+    $instance = $old_instance;
+  	$instance['title']    = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
+  	$instance['text']     = isset( $new_instance['text'] ) ? wp_strip_all_tags( $new_instance['text'] ) : '';
+  	return $instance;
 	}
 
 }
