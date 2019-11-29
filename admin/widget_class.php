@@ -61,6 +61,24 @@ class HL_WP__Widget extends WP_Widget {
 		echo '<div class="widget-text wp_widget_plugin_box">';
 
 
+		if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
+		  $formContent = stripslashes(get_option('hl-wp-embed'));
+		}else {
+		  $dataOpts = '';
+		  if(get_option('hl-wp-field-firstname') || get_option('hl-wp-field-lastname')){
+		    $dataOpts .= 'name';
+		  }
+		  if(get_option('hl-wp-field-mobile')){
+		    $dataOpts .= ',mobile';
+		  }
+
+		  if ( $title ) {
+		  	$dataOpts .= '&formHeading=' . $title;
+		  }
+		  if ( $text ) {
+		    $dataOpts .= '&formDesc=' . $text;
+			}
+		}
 
 
 		echo '</div>';
