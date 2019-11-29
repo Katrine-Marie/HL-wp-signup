@@ -14,7 +14,7 @@ class HL_WP__Widget extends WP_Widget {
 
 	// The widget form
 	public function form( $instance ) {
-		// Set widget defaults
+    // Set widget defaults
   	$defaults = array(
   		'title'    => 'Sign up for our newsletter',
   		'text'     => ''
@@ -50,43 +50,44 @@ class HL_WP__Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
     extract( $args );
 
-		// Check the widget options
+  	// Check the widget options
   	$title    = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
   	$text     = isset( $instance['text'] ) ? $instance['text'] : '';
 
-		// WordPress core before_widget hook (always include )
-		echo $before_widget;
+  	// WordPress core before_widget hook (always include )
+  	echo $before_widget;
 
-		// Display the widget
-		echo '<div class="widget-text wp_widget_plugin_box">';
+    // Display the widget
+     echo '<div class="widget-text wp_widget_plugin_box">';
 
+    if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
+      $formContent = stripslashes(get_option('hl-wp-embed'));
+    }else {
+      $dataOpts = '';
+      if(get_option('hl-wp-field-firstname') || get_option('hl-wp-field-lastname')){
+        $dataOpts .= 'name';
+      }
+      if(get_option('hl-wp-field-mobile')){
+        $dataOpts .= ',mobile';
+      }
 
-		if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
-		  $formContent = stripslashes(get_option('hl-wp-embed'));
-		}else {
-		  $dataOpts = '';
-		  if(get_option('hl-wp-field-firstname') || get_option('hl-wp-field-lastname')){
-		    $dataOpts .= 'name';
-		  }
-		  if(get_option('hl-wp-field-mobile')){
-		    $dataOpts .= ',mobile';
-		  }
+      if ( $title ) {
+    		$dataOpts .= '&formHeading=' . $title;
+    	}
+      if ( $text ) {
+    		$dataOpts .= '&formDesc=' . $text;
+    	}
 
-		  if ( $title ) {
-		  	$dataOpts .= '&formHeading=' . $title;
-		  }
-		  if ( $text ) {
-		    $dataOpts .= '&formDesc=' . $text;
-			}
-
-			$apiKeyParam = urlencode(base64_encode(get_option('hl-wp-api-key')));
+      $apiKeyParam = urlencode(base64_encode(get_option('hl-wp-api-key')));
       $secretKeyParam = urlencode(base64_encode(get_option('hl-wp-secret-key')));
       $listIDParam = urlencode(base64_encode(get_option('hl-wp-list-id')));
 
-			$formContent = '<iframe style="width:100%;height:350px;" frameborder="0" src="' . get_home_url() . '/wp-content/plugins/HL-wp-signup/users/custom_form.php?dataOpts='. $dataOpts .'&access1='. $apiKeyParam .'&access2=' . $secretKeyParam . '&list=' . $listIDParam . '"></iframe>';
-		}
+      $formContent = '<iframe style="width:100%;height:350px;" frameborder="0" src="' . get_home_url() . '/wp-content/plugins/HL-wp-signup/users/custom_form.php?dataOpts='. $dataOpts .'&access1='. $apiKeyParam .'&access2=' . $secretKeyParam . '&list=' . $listIDParam . '"></iframe>';
+    }
 
-		echo '</div>';
+    echo $formContent;
+
+  	echo '</div>';
 
   	// WordPress core after_widget hook (always include )
   	echo $after_widget;
