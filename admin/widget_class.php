@@ -53,6 +53,20 @@ class HL_WP__Widget extends WP_Widget {
 		// Check the widget options
   	$title    = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
   	$text     = isset( $instance['text'] ) ? $instance['text'] : '';
+
+		// WordPress core before_widget hook (always include )
+		echo $before_widget;
+
+		// Display the widget
+		echo '<div class="widget-text wp_widget_plugin_box">';
+
+
+
+
+		echo '</div>';
+
+  	// WordPress core after_widget hook (always include )
+  	echo $after_widget;
 	}
 
 }
