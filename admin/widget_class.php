@@ -49,6 +49,10 @@ class HL_WP__Widget extends WP_Widget {
 	// Display the widget
 	public function widget( $args, $instance ) {
     extract( $args );
+
+		// Check the widget options
+  	$title    = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+  	$text     = isset( $instance['text'] ) ? $instance['text'] : '';
 	}
 
 }
