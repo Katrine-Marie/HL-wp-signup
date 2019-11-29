@@ -78,8 +78,11 @@ class HL_WP__Widget extends WP_Widget {
 		  if ( $text ) {
 		    $dataOpts .= '&formDesc=' . $text;
 			}
-		}
 
+			$apiKeyParam = urlencode(base64_encode(get_option('hl-wp-api-key')));
+      $secretKeyParam = urlencode(base64_encode(get_option('hl-wp-secret-key')));
+      $listIDParam = urlencode(base64_encode(get_option('hl-wp-list-id')));
+		}
 
 		echo '</div>';
 
