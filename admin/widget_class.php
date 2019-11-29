@@ -46,6 +46,11 @@ class HL_WP__Widget extends WP_Widget {
   	return $instance;
 	}
 
+	// Display the widget
+	public function widget( $args, $instance ) {
+    extract( $args );
+	}
+
 }
 
 // Register the widget
