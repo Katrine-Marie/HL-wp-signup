@@ -12,9 +12,11 @@ class heyloyaltyAutomaticAddition {
 
 	public function heyloyaltyForm_the_content( $content )
 	{
-		$formContent = stripslashes(get_option('hl-wp-embed'));
+		if( is_single() ){
+			$formContent = stripslashes(get_option('hl-wp-embed'));
 
-		$content .= '<br>' . $formContent;
+			$content .= '<br>' . $formContent;
+		}
 		return $content;
 	}
 
