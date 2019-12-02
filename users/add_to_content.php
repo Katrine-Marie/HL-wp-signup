@@ -13,6 +13,10 @@ class heyloyaltyAutomaticAddition {
 	public function heyloyaltyForm_the_content( $content )
 	{
 		if( is_single() ){
+			if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
+				$formContent = stripslashes(get_option('hl-wp-embed'));
+			}
+			
 			$formContent = stripslashes(get_option('hl-wp-embed'));
 
 			$content .= '<br>' . $formContent;
