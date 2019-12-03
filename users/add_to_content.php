@@ -29,6 +29,9 @@ class heyloyaltyAutomaticAddition {
 					$dataOpts .= '&formHeading=' . get_option('hl-wp-form-heading');
 				}
 
+				$apiKeyParam = urlencode(base64_encode(get_option('hl-wp-api-key')));
+				$secretKeyParam = urlencode(base64_encode(get_option('hl-wp-secret-key')));
+				$listIDParam = urlencode(base64_encode(get_option('hl-wp-list-id')));
 
 
 			}
