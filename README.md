@@ -14,5 +14,5 @@ NOTE: The advanced settings override the simple ones.
 You have three options for including the form on your website.
 
 * Append the form to the content on every (single) post or page by ticking the appropriate checkbox in the admin dashboard.
-* Use the `[heyloyalty_wp_signup]` shortcode to insert the form wherever you want in the content or in a text widget.
-* Use the included HL WP Widget.
+* Use the `[heyloyalty_wp_signup]` shortcode to insert the form wherever you want in the content (or in a text widget).
+* Use the included HL WP Widget to place the signup form in a widget area such as the sidebar or footer. .
