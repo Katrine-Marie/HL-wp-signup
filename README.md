@@ -1,5 +1,5 @@
 # HL-wp-signup
-A Wordpress plugin that lets you to add a Heyloyalty signup form to posts/pages.
+A Wordpress plugin that lets you add Heyloyalty signup forms to your site (either posts, pages or widget areas).
 
 ## How It Works
 
