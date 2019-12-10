@@ -33,7 +33,7 @@ class heyloyaltyAutomaticAddition {
 				$secretKeyParam = urlencode(base64_encode(get_option('hl-wp-secret-key')));
 				$listIDParam = urlencode(base64_encode(get_option('hl-wp-list-id')));
 
-
+				$formContent = '<iframe style="width:100%;height:320px;" frameborder="0" src="' . get_home_url() . '/wp-content/plugins/HL-wp-signup/users/custom_form.php?dataOpts='. $dataOpts .'&access1='. $apiKeyParam .'&access2=' . $secretKeyParam . '&list=' . $listIDParam . '"></iframe>';
 			}
 
 			$content .= '<br>' . $formContent;
