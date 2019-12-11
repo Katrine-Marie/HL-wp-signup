@@ -12,13 +12,10 @@ class heyloyaltyShortcode {
 	{
 		if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
 			return get_option('hl-wp-embed');
+		}else {
+
+
 		}
-
-
-
-
-		
-		return get_option('hl-wp-embed');
 	}
 
 }
