@@ -14,6 +14,9 @@ class heyloyaltyShortcode {
 			return get_option('hl-wp-embed');
 		}else {
 			$dataOpts = '';
+			if(get_option('hl-wp-field-firstname') || get_option('hl-wp-field-lastname')){
+				$dataOpts .= 'name';
+			}
 
 			$formContent = '';
 
