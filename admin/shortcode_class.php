@@ -10,6 +10,14 @@ class heyloyaltyShortcode {
 
 	public function heyloyalty_add_shortcode()
 	{
+		if(get_option('hl-wp-api-key') == '' && get_option('hl-wp-secret-key') == ''){
+			return get_option('hl-wp-embed');
+		}
+
+
+
+
+		
 		return get_option('hl-wp-embed');
 	}
 
