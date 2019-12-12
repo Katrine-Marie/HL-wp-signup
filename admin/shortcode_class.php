@@ -21,6 +21,10 @@ class heyloyaltyShortcode {
 				$dataOpts .= ',mobile';
 			}
 
+			if(get_option('hl-wp-form-heading')){
+				$dataOpts .= '&formHeading=' . get_option('hl-wp-form-heading');
+			}
+
 			$formContent = '';
 
 			return $formContent;
